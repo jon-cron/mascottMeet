@@ -3,8 +3,8 @@ export class Post{
     this.title = data.name
     this. description = data.description
     this.img = data.img
-    this.postId = data.postId
-    this.likes= data.likes
+    this.posterId = data.posterId
+    this.likeCount = data.likeCount
     this.name = data.postedBy.name
     this.picture = data.postedBy.picture
 
@@ -13,13 +13,13 @@ export class Post{
   get PostTemplate(){
     return`
     <section class="row m-2 p-1 elevation-1 bg-light">
-    <div class="col-3 selectable" onclick="app.postsController.getPost(${this.postId})">
+    <div class="col-3 selectable" onclick="app.postsController.getPost(${this.posterId})">
       <img class="img-fluid" src="${this.img}" alt="">
     </div>
     <div class="col-6">
     <div>
       <h1>${this.title}</h1>
-      <h4>Likes:${this.likes}</h4>
+      <h4>Likes:${this.likeCount}</h4>
       </div>
       <div class="mt-5">
       <h4>Posted By:</h4>
@@ -30,7 +30,7 @@ export class Post{
       </div>
     </div>
     <div class="col-3 d-flex justify-content-center align-items-center">
-      <button class="btn text-center" onclick="app.likersController.likePost('${this.postId})"><h1><i class="mdi mdi-heart"></i></h1></button>
+      <button class="btn text-center" onclick="app.likersController.likePost('${this.posterId}')"><h1><i class="mdi mdi-heart"></i></h1></button>
     </div>
   </section>`
   }

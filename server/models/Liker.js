@@ -17,9 +17,9 @@ export const LikerSchema = new Schema({
 
 LikerSchema.virtual('liker', {
   localField: "likerId",
-  ref: "Account",
   foreignField: "_id",
-  justOne: true
+  justOne: true,
+  ref: "Account"
 })
 
 

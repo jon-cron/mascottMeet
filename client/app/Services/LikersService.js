@@ -1,7 +1,10 @@
+import { server } from "./AxiosService.js"
 
 class LikersService{
   async likePost(postId){
-    const res = await server.post('api/pos', { postId })
+    // console.log(postId)
+    const res = await server.post('api/likers', { postId })
+    console.log(res.data)
     const likedPost = appState.posts.find(p => p.id == postId)
  
    likedPost.likes++ 
