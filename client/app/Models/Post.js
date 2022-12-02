@@ -2,7 +2,7 @@ export class Post{
   constructor(data){
     this.name = data.name,
     this. description = data.description
-    this.imgUrl = data.imgUrl
+    this.img = data.img
     this.postId = data.postId
     this.likes= data.likes
 
@@ -12,7 +12,7 @@ export class Post{
     return`
     <section class="row m-2 p-1 elevation-1">
     <div class="col-3 selectable" onclick="app.postsController.getPost(${this.postId})">
-      <img class="img-fluid" src="${this.imgUrl}" alt="">
+      <img class="img-fluid" src="${this.img}" alt="">
     </div>
     <div class="col-6">
       <h1>${this.name} like ${this.likes}</h1>

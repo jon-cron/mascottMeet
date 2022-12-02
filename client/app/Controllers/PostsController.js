@@ -18,6 +18,7 @@ function _drawActivePost(){
 
 export class PostsController{
   constructor(){
+   this.getPost() 
     appState.on('posts', _drawPosts)
   }
 
