@@ -4,8 +4,8 @@ import { Schema } from "mongoose";
 
 
 export const PostSchema = new Schema({
-  name: { type: String, required: true, minLength: 6, maxLength: 30 },
-  description: { type: String, required: true, minLength: 25, maxLength: 500 },
+  name: { type: String, required: true },
+  description: { type: String, required: true, maxLength: 500 },
   img: { type: String, required: true, maxLength: 400 },
   posterId: { type: Schema.Types.ObjectId, required: true, ref: 'Account' }
 },
@@ -27,7 +27,7 @@ PostSchema.virtual('likeCount', {
   count: true
 })
 
-PostSchema.virtual('comments',{
+PostSchema.virtual('comments', {
   localField: "_id",
   foreignField: "postId",
   ref: 'Comments',

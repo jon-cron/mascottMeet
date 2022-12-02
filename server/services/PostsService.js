@@ -18,7 +18,7 @@ class PostsService {
 
   async createPost(postData) {
     const newPost = await dbContext.Posts.create(postData)
-    newPost.populate('postedBy likeCount')
+    await newPost.populate('postedBy likeCount')
     return newPost
   }
 }
