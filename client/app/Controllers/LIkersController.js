@@ -6,9 +6,9 @@ export class LikersController{
   constructor(){
     console.log('LIkers controller connected')
   }
-  async likePost(postId){
+  async likePost(id){
     try {
-      await likersService.likePost(postId)
+      await likersService.likePost(id)
     } catch (error) {
       Pop.error(error.message)
     }

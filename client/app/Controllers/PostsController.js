@@ -1,5 +1,6 @@
 import { appState } from "../AppState.js"
 import { postsService } from "../Services/PostsService.js"
+import { getFormData } from "../Utils/FormHandler.js"
 import { Pop } from "../Utils/Pop.js"
 import { setHTML } from "../Utils/Writer.js"
 
@@ -23,18 +24,27 @@ export class PostsController{
   }
 
   
- async getPost(postId){
+ async getPost(){
   try {
-    await postsService.getPost(postId)
+    await postsService.getPost()
     
   } catch (error) {
     Pop.error(error.message)
   }
   }
+  async getOnePost(id){
+try {
+  await postsService.getOnePost(id)
+} catch (error) {
+  Pop.error(error.message)
+}
+  }
  async create(){
   try {
     window.event.preventDefault()
-    await postsService.create()
+    let form = window.event.target
+    let formData = getFormData(form)
+    await postsService.create(formData)
   } catch (error) {
     Pop.error(error.message)
   }

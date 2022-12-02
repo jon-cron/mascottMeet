@@ -12,9 +12,6 @@ export const LikerSchema = new Schema({
 }, { timestamps: true, toJSON: { virtuals: true } })
 
 
-
-
-
 LikerSchema.virtual('liker', {
   localField: "likerId",
   foreignField: "_id",

@@ -57,6 +57,9 @@
     </section>
   </main>
   <footer></footer>
+  <!-- NOTE active post template below -->
+  
+  <!-- NOTE form off canvas below -->
   <div class="offcanvas offcanvas-top off-form" tabindex="-1" id="offcanvasTop" aria-labelledby="offcanvasTopLabel">
     <div class="offcanvas-header">
       <h5 id="offcanvasTopLabel">Make Post</h5>
@@ -68,15 +71,15 @@
         <form class="off-form" onsubmit="app.postsController.create()" action="">
           <div class="form-group p-2">
             <label for="title">Title</label>
-            <input type="string" class="form-control" id="title" aria-describedby="emailHelp" placeholder="Post Title">
+            <input name="name" type="string" class="form-control" id="title" aria-describedby="emailHelp" placeholder="Post Title">
           </div>
           <div class="form-group p-2">
             <label for="description">Description</label>
-            <input type="string" class="form-control" id="description" aria-describedby="emailHelp" placeholder="Post Description">
+            <input name="description" type="string" class="form-control" id="description" aria-describedby="emailHelp" placeholder="Post Description">
           </div>
           <div class="form-group p-2">
             <label for="img">Image Url</label>
-            <input type="string" class="form-control" id="img" aria-describedby="emailHelp" placeholder="Enter Url here">
+            <input name="img" type="string" class="form-control" id="img" aria-describedby="emailHelp" placeholder="Enter Url here">
             <div class="d-flex justify-content-end">
 
               <button class="btn post-btn m-2">Post</button>
@@ -85,6 +88,7 @@
         </form>
       </div>
     </div>
+  
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>

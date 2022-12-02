@@ -1,7 +1,8 @@
 export class Post{
   constructor(data){
+    this.id = data.id
     this.title = data.name
-    this. description = data.description
+    this.description = data.description
     this.img = data.img
     this.posterId = data.posterId
     this.likeCount = data.likeCount
@@ -13,7 +14,7 @@ export class Post{
   get PostTemplate(){
     return`
     <section class="row m-2 p-1 elevation-1 bg-light">
-    <div class="col-3 selectable" onclick="app.postsController.getPost(${this.posterId})">
+    <div class="col-3 selectable" data-toggle="modal" data-target="#exampleModalCenter" onclick="app.postsController.getOnePost('${this.id}')">
       <img class="img-fluid" src="${this.img}" alt="">
     </div>
     <div class="col-6">
@@ -30,8 +31,30 @@ export class Post{
       </div>
     </div>
     <div class="col-3 d-flex justify-content-center align-items-center">
-      <button class="btn text-center" onclick="app.likersController.likePost('${this.posterId}')"><h1><i class="mdi mdi-heart"></i></h1></button>
+      <button class="btn text-center" onclick="app.likersController.likePost('${this.id}')"><h1><i class="mdi mdi-heart"></i></h1></button>
     </div>
   </section>`
+  }
+  static ActivePostTemplate(){
+    return`
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          ...
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>`
   }
 }
