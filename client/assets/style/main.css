@@ -13735,7 +13735,7 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background-color: #e8e8e8;
+  background-color: #5B5BD8;
 }
 
 main {
@@ -13746,6 +13746,11 @@ main {
   height: 6vh;
   width: 6vh;
   object-fit: cover;
+  border-radius: 45em;
+}
+
+.navbar {
+  background-color: #F21E95 !important;
 }
 
 /*# sourceMappingURL=main.css.map */
