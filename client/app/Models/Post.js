@@ -1,6 +1,6 @@
 export class Post{
   constructor(data){
-    this.name = data.name
+    this.title = data.name
     this. description = data.description
     this.img = data.img
     this.postId = data.postId
@@ -18,7 +18,8 @@ export class Post{
     </div>
     <div class="col-6">
     <div>
-      <h1>${this.name} like ${this.likes}</h1>
+      <h1>${this.title}</h1>
+      <h1>Likes:${this.likes}</h1>
       </div>
       <div class="mt-5">
       <h4>Posted By:</h4>
