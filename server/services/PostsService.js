@@ -6,12 +6,12 @@ import { BadRequest } from "../utils/Errors.js";
 
 class PostsService {
   async getPosts() {
-    const posts = await dbContext.Posts.find()
+    const posts = await dbContext.Posts.find().populate('postedBy')
     return posts
   }
 
   async getPostById(id) {
-    const post = await dbContext.Posts.findById(id)
+    const post = await dbContext.Posts.findById(id).populate('postedBy')
     if (!post) { throw new BadRequest('can not locate post') }
     return post
   }
