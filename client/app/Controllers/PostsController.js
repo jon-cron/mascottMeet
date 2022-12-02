@@ -26,6 +26,15 @@ export class PostsController{
  async getPost(postId){
   try {
     await postsService.getPost(postId)
+    
+  } catch (error) {
+    Pop.error(error.message)
+  }
+  }
+ async create(){
+  try {
+    window.event.preventDefault()
+    await postsService.create()
   } catch (error) {
     Pop.error(error.message)
   }
