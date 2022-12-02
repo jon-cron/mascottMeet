@@ -29,11 +29,5 @@ export class PostsController{
     Pop.error(error.message)
   }
   }
-  async likePost(postId){
-    try {
-      await postsService.likePost(postId)
-    } catch (error) {
-      Pop.error(error.message)
-    }
-  }
+ 
 }

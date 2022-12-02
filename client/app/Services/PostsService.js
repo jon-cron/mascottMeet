@@ -1,3 +1,5 @@
+import { Server } from "socket.io"
+import { appState } from "../AppState.js"
 
 
 class PostsService{
@@ -5,9 +7,7 @@ class PostsService{
  async getPost(postId){
 
  }
- async likePost(postId){
-  
- }
+ 
 
 }
 

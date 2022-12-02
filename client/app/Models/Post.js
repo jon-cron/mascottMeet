@@ -4,6 +4,8 @@ export class Post{
     this. description = data.description
     this.imgUrl = data.imgUrl
     this.postId = data.postId
+    this.likes= data.likes
+
   }
 
   get PostTemplate(){
@@ -13,11 +15,11 @@ export class Post{
       <img class="img-fluid" src="${this.imgUrl}" alt="">
     </div>
     <div class="col-6">
-      <h1>${this.name} like count</h1>
+      <h1>${this.name} like ${this.likes}</h1>
       <p>${this.description}</p>
     </div>
     <div class="col-3 d-flex justify-content-center align-items-center">
-      <button class="btn text-center"><h1><i class="mdi mdi-heart"></i></h1></button>
+      <button class="btn text-center" onclick="app.likersController.likePost('${this.postId})"><h1><i class="mdi mdi-heart"></i></h1></button>
     </div>
   </section>`
   }
