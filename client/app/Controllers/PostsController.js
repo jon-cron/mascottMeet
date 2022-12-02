@@ -18,6 +18,7 @@ function _drawActivePost(){
 
 export class PostsController{
   constructor(){
+   this.getPost() 
     appState.on('posts', _drawPosts)
   }
 
@@ -29,11 +30,5 @@ export class PostsController{
     Pop.error(error.message)
   }
   }
-  async likePost(postId){
-    try {
-      await postsService.likePost(postId)
-    } catch (error) {
-      Pop.error(error.message)
-    }
-  }
+ 
 }
