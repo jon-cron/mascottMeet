@@ -20,7 +20,6 @@ class PostsService {
     const newPost = await dbContext.Posts.create(postData)
     newPost.populate('postedBy likeCount')
     return newPost
-
   }
 }
 

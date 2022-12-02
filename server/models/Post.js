@@ -27,3 +27,10 @@ PostSchema.virtual('likeCount', {
   count: true
 })
 
+PostSchema.virtual('comments',{
+  localField: "_id",
+  foreignField: "postId",
+  ref: 'Comments',
+  justOne: false
+}
+)
