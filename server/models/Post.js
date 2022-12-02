@@ -19,3 +19,11 @@ PostSchema.virtual('postedBy', {
   justOne: true
 })
 
+
+PostSchema.virtual('likeCount', {
+  localField: "_id",
+  foreignField: "postId",
+  ref: "Liker",
+  count: true
+})
+
