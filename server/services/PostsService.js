@@ -21,6 +21,12 @@ class PostsService {
     newPost.populate('postedBy likeCount')
     return newPost
   }
+ async remove(id){
+    const post = await dbContext.Posts.findById(id)
+    if(!post) throw new BadRequest('no post by this id')
+    await post.remove()
+    return `deleted ${post.name}`
+  }
 }
 
 
