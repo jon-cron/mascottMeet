@@ -7,14 +7,14 @@ export const PostSchema = new Schema({
   name: { type: String, required: true, minLength: 6, maxLength: 30 },
   description: { type: String, required: true, minLength: 25, maxLength: 500 },
   img: { type: String, required: true, maxLength: 400 },
-  posterId: { type: Schema.Types.ObjectId, required: true, ref: 'account' }
+  posterId: { type: Schema.Types.ObjectId, required: true, ref: 'Account' }
 },
   { timestamps: true, toJSON: { virtuals: true } })
 
 
 PostSchema.virtual('postedBy', {
   localField: 'posterId',
-  ref: 'account',
+  ref: 'Account',
   foreignField: '_id',
   justOne: true
 })
