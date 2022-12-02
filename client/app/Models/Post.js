@@ -19,7 +19,7 @@ export class Post{
     <div class="col-6">
     <div>
       <h1>${this.title}</h1>
-      <h1>Likes:${this.likes}</h1>
+      <h4>Likes:${this.likes}</h4>
       </div>
       <div class="mt-5">
       <h4>Posted By:</h4>
