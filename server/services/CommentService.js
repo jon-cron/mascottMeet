@@ -1,16 +1,20 @@
 import { dbContext } from "../db/DbContext.js"
 
 
-class CommentsService{
-  async getAll(){
-    const comments = await dbContext.Comments.find()
+class CommentsService {
+  async getAll() {
+    const comments = await dbContext.Comments.find().populate('commenter', 'name picture')
     return comments
   }
-  async createComment(body){
+  async getCommentsByPost(id) {
+    const comment = await dbContext.Comments.find({ postId: id }).populate('commenter', 'name picture')
+    return comment
+  }
+  async createComment(body) {
     const comment = await dbContext.Comments.create(body)
     return comment
   }
 }
 
 
- export const commentsService = new CommentsService()
+export const commentsService = new CommentsService()

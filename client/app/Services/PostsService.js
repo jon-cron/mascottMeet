@@ -1,6 +1,7 @@
 import { appState } from "../AppState.js"
 import { Post } from "../Models/Post.js"
 import { server } from "./AxiosService.js"
+import { commentsService } from "./CommentsService.js"
 
 class PostsService {
 
@@ -13,6 +14,8 @@ class PostsService {
     let foundPost = appState.posts.find(p => p.id == id)
     appState.activePost = foundPost
     console.log(appState.activePost)
+    appState.comments = appState.activePost.comments
+    console.log(appState.comments)
   }
   async create(formData) {
     let res = await server.post('api/posts', formData)
@@ -20,6 +23,13 @@ class PostsService {
     appState.posts.push(new Post(res.data))
     appState.emit('posts')
   }
+
+  // async getComments() {
+  //   let comment = await commnetsService.getComments()
+  //   console.log(comment);
+  //   return comment
+
+  // }
 
 
 }

@@ -7,12 +7,15 @@ class AppState extends EventEmitter {
   /** @type {import('./Models/Account.js').Account} */
   // @ts-ignore
   account = {}
- 
+
   // values = []
-   /** @type {import('./Models/Post').Post[]} */
-   posts = []
-   /** @type {import('./Models/Post').Post|null} */
-   activePost = null
+  /** @type {import('./Models/Post').Post[]} */
+  posts = []
+  /** @type {import('./Models/Post').Post|null} */
+  activePost = null
+
+  /** @type {import('./Models/Comment').Comment []} */
+  comments = []
   socketData = []
 }
 

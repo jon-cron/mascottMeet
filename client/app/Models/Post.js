@@ -8,6 +8,7 @@ export class Post {
     this.likeCount = data.likeCount
     this.username = data.postedBy.name
     this.picture = data.postedBy.picture
+    this.comments = data.comments
   }
 
   get PostTemplate() {
@@ -48,6 +49,7 @@ export class Post {
               src="${this.picture}"
               class="poster-img ms-2">
           </p>
+
           `
   }
 }
