@@ -1,9 +1,16 @@
 import { appState } from "../AppState.js"
 import { Post } from "../Models/Post.js"
+import { Pop } from "../Utils/Pop.js"
 import { server } from "./AxiosService.js"
 import { commentsService } from "./CommentsService.js"
 
 class PostsService {
+  async removePost(id) {
+    const res = await server.delete('api/posts')
+    console.log('delete post', res.data);
+    Pop.toast(res.data, 'success')
+    appState.posts = appState.posts.filter(p => p.id != id)
+  }
 
   async getPost() {
     const res = await server.get('api/posts')

@@ -34,6 +34,8 @@ export class Post {
     <div class="col-3 d-flex justify-content-center align-items-center">
       <button class="btn text-center" onclick="app.likersController.likePost('${this.id}')"><h1><i class="mdi mdi-heart"></i></h1></button>
     </div>
+    <button onclick="app.postsController.removePost()">remove post</button>
+
   </section>`
   }
   get ActivePostTemplate() {

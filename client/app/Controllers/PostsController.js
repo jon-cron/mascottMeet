@@ -51,4 +51,15 @@ export class PostsController {
     }
   }
 
+  async removePost(id) {
+    try {
+      if (await Pop.confirm('delete post', 'mastcott gone', 'toss it')) {
+        await postsService.removePost(id)
+      }
+    } catch (error) {
+      Pop.error(error.message)
+      console.error(error)
+    }
+  }
+
 }
