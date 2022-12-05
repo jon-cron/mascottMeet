@@ -26,7 +26,7 @@ export class CommentsController {
 
     async getComments(id) {
         try {
-            const comments = await commentsService.getComments(id)
+            await commentsService.getComments(id)
         } catch (error) {
             Pop.error(error.message)
         }
