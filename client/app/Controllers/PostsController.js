@@ -8,58 +8,58 @@ import { setHTML } from "../Utils/Writer.js"
 
 
 function _drawPosts() {
-  let template = ''
-  appState.posts.forEach(p => template += p.PostTemplate)
-  setHTML('posts', template)
+    let template = ''
+    appState.posts.forEach(p => template += p.PostTemplate)
+    setHTML('posts', template)
 
 }
 function _drawActivePost(postId) {
-  setHTML('postGoesHere', appState.activePost.ActivePostTemplate)
+    setHTML('postGoesHere', appState.activePost.ActivePostTemplate)
 }
 
 export class PostsController {
-  constructor() {
-    this.getPost()
-    appState.on('posts', _drawPosts)
-    appState.on('activePost', _drawActivePost)
-  }
+    constructor() {
+        this.getPost()
+        appState.on('posts', _drawPosts)
+        appState.on('activePost', _drawActivePost)
+    }
 
 
-  async getPost() {
-    try {
-      await postsService.getPost()
+    async getPost() {
+        try {
+            await postsService.getPost()
 
-    } catch (error) {
-      Pop.error(error.message)
+        } catch (error) {
+            Pop.error(error.message)
+        }
     }
-  }
-  async getOnePost(id) {
-    try {
-      await postsService.getOnePost(id)
-    } catch (error) {
-      Pop.error(error.message)
+    async getOnePost(id) {
+        try {
+            await postsService.getOnePost(id)
+        } catch (error) {
+            Pop.error(error.message)
+        }
     }
-  }
-  async create() {
-    try {
-      window.event.preventDefault()
-      let form = window.event.target
-      let formData = getFormData(form)
-      await postsService.create(formData)
-    } catch (error) {
-      Pop.error(error.message)
+    async create() {
+        try {
+            window.event.preventDefault()
+            let form = window.event.target
+            let formData = getFormData(form)
+            await postsService.create(formData)
+        } catch (error) {
+            Pop.error(error.message)
+        }
     }
-  }
 
-  async removePost(id) {
-    try {
-      if (await Pop.confirm('delete post', 'mastcott gone', 'toss it')) {
-        await postsService.removePost(id)
-      }
-    } catch (error) {
-      Pop.error(error.message)
-      console.error(error)
+    async removePost(id) {
+        try {
+            if (await Pop.confirm('Are you sure...', 'that you want to give up on looking for love?', 'Yes')) {
+                await postsService.removePost(id)
+            }
+        } catch (error) {
+            Pop.error(error.message)
+            console.error(error)
+        }
     }
-  }
 
 }

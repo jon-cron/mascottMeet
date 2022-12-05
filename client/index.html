@@ -2,48 +2,48 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="icon" href="https://bcw.blob.core.windows.net/public/img/9977764104160066">
-  <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css' rel='stylesheet'
-    integrity='sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC' crossorigin='anonymous'>
-  <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/7.0.96/css/materialdesignicons.min.css"
-    integrity="sha512-fXnjLwoVZ01NUqS/7G5kAnhXNXat6v7e3M9PhoMHOTARUMCaf5qNO84r5x9AFf5HDzm3rEZD8sb/n6dZ19SzFA=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="assets/style/main.css">
-  <link rel="stylesheet" href="//cdn.materialdesignicons.com/5.4.55/css/materialdesignicons.min.css">
-  <title>Mascott Meet</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="https://bcw.blob.core.windows.net/public/img/9977764104160066">
+    <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css' rel='stylesheet'
+        integrity='sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi' crossorigin='anonymous'>
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/7.0.96/css/materialdesignicons.min.css"
+        integrity="sha512-fXnjLwoVZ01NUqS/7G5kAnhXNXat6v7e3M9PhoMHOTARUMCaf5qNO84r5x9AFf5HDzm3rEZD8sb/n6dZ19SzFA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="assets/style/main.css">
+    <link rel="stylesheet" href="//cdn.materialdesignicons.com/5.4.55/css/materialdesignicons.min.css">
+    <title>Mascott Meet</title>
 </head>
 
 <body>
-  <header>
-    <nav class="navbar navbar-dark navbar-expand bg-dark text-light">
-      <a class="navbar-brand" href="#">
-        <i class="mdi mdi-heart"></i>
-        <span class="ml-2">Mascott Meet</span>
-      </a>
-      <button class="btn post-btn text-light" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop"
-        aria-controls="offcanvasTop">Make Post</button>
+    <header>
+        <nav class="navbar navbar-dark navbar-expand bg-dark text-light">
+            <a class="navbar-brand" href="#">
+                <i class="mdi mdi-heart"></i>
+                <span class="ml-2">Mascott Meet</span>
+            </a>
+            <button class="btn post-btn text-light" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasTop" aria-controls="offcanvasTop">Make Post</button>
 
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
-        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
-          <!-- NAVLINKS -->
-        </div>
-      </div>
-      <div class="flex-grow-1 justify-content-end align-items-center d-flex" id="authstate"></div>
-    </nav>
-  </header>
-  <main class="container" id="app">
-    <section class="row">
-      <div class="col-11" id="posts">
-        <!-- SECTION post template -->
-        <!-- <section class="row m-2 p-1 elevation-1">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <!-- NAVLINKS -->
+                </div>
+            </div>
+            <div class="flex-grow-1 justify-content-end align-items-center d-flex" id="authstate"></div>
+        </nav>
+    </header>
+    <main class="container" id="app">
+        <section class="row">
+            <div class="col-11" id="posts">
+                <!-- SECTION post template -->
+                <!-- <section class="row m-2 p-1 elevation-1">
           <div class="col-3 selectable" onclick="app.postsController.getPost(id)">
             <img class="img-fluid" src="https://thiscatdoesnotexist.com" alt="">
           </div>
@@ -55,74 +55,74 @@
             <button class="btn text-center"><h1><i class="mdi mdi-heart"></i></h1></button>
           </div>
         </section> -->
-        <!-- SECTION post end -->
-      </div>
-    </section>
-    <section></section>
-  </main>
-  <footer></footer>
-  <!-- NOTE active post template below -->
-
-  <!-- NOTE form off canvas below -->
-  <div class="offcanvas offcanvas-top off-form" tabindex="-1" id="offcanvasTop" aria-labelledby="offcanvasTopLabel">
-    <div class="offcanvas-header">
-      <h5 id="offcanvasTopLabel">Make Post</h5>
-      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-    </div>
-    <div class="">
-      <div class="">
-        <form class="off-form" onsubmit="app.postsController.create()" action="">
-          <div class="form-group p-2">
-            <label for="name">Title</label>
-            <input name="name" type="string" class="form-control" id="name" aria-describedby="emailHelp"
-              placeholder="Post Title">
-          </div>
-          <div class="form-group p-2">
-            <label for="description">Description</label>
-            <input name="description" type="string" class="form-control" id="description" aria-describedby="emailHelp"
-              placeholder="Post Description">
-          </div>
-          <div class="form-group p-2">
-            <label for="img">Image Url</label>
-            <input name="img" type="string" class="form-control" id="img" aria-describedby="emailHelp"
-              placeholder="Enter Url here">
-            <div class="d-flex justify-content-end">
-
-              <button class="btn post-btn m-2">Post</button>
+                <!-- SECTION post end -->
             </div>
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
+        </section>
+        <section></section>
+    </main>
+    <footer></footer>
+    <!-- NOTE active post template below -->
 
-
-  <!-- Modal -->f
-  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-  <script src="https://cdn.auth0.com/js/auth0-spa-js/1.22/auth0-spa-js.production.js"></script>
-  <script src="https://cdn.jsdelivr.net/gh/jakeoverall/auth0provider-client/browser/Auth0Provider.js"></script>
-  <script src="https://cdn.socket.io/4.1.1/socket.io.min.js"
-    integrity="sha384-cdrFIqe3RasCMNE0jeFG9xJHog/tgOVC1E9Lzve8LQN1g5WUHo0Kvk1mawWjxX7a"
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.3.10/dist/sweetalert2.all.min.js"
-    integrity="sha256-hw7v8jZF/rFEdx1ZHepT4D73AFTHLu/P9kEyrNesRyc=" crossorigin="anonymous"></script>
-
-  <script src="app/App.js" type="module"></script>
-
-
-  <!-- SECTION ACTIVE POST OFFCANVAS -->
-  <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
-    <div class="offcanvas-header container-fluid">
-      <section class="row d-flex">
-        <div id="postGoesHere"></div>
-        <div id="comments">
+    <!-- NOTE form off canvas below -->
+    <div class="offcanvas offcanvas-top off-form" tabindex="-1" id="offcanvasTop" aria-labelledby="offcanvasTopLabel">
+        <div class="offcanvas-header">
+            <h5 id="offcanvasTopLabel">Make Post</h5>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
-      </section>
+        <div class="">
+            <div class="">
+                <form class="off-form" onsubmit="app.postsController.create()" action="">
+                    <div class="form-group p-2">
+                        <label for="name">Title</label>
+                        <input name="name" type="string" class="form-control" id="name" aria-describedby="emailHelp"
+                            placeholder="Post Title">
+                    </div>
+                    <div class="form-group p-2">
+                        <label for="description">Description</label>
+                        <input name="description" type="string" class="form-control" id="description"
+                            aria-describedby="emailHelp" placeholder="Post Description">
+                    </div>
+                    <div class="form-group p-2">
+                        <label for="img">Image Url</label>
+                        <input name="img" type="string" class="form-control" id="img" aria-describedby="emailHelp"
+                            placeholder="Enter Url here">
+                        <div class="d-flex justify-content-end">
+
+                            <button class="btn post-btn m-2">Post</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
-  </div>
+
+
+    <!-- Modal -->f
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.auth0.com/js/auth0-spa-js/1.22/auth0-spa-js.production.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/jakeoverall/auth0provider-client/browser/Auth0Provider.js"></script>
+    <script src="https://cdn.socket.io/4.1.1/socket.io.min.js"
+        integrity="sha384-cdrFIqe3RasCMNE0jeFG9xJHog/tgOVC1E9Lzve8LQN1g5WUHo0Kvk1mawWjxX7a"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.3.10/dist/sweetalert2.all.min.js"
+        integrity="sha256-hw7v8jZF/rFEdx1ZHepT4D73AFTHLu/P9kEyrNesRyc=" crossorigin="anonymous"></script>
+
+    <script src="app/App.js" type="module"></script>
+
+
+    <!-- SECTION ACTIVE POST OFFCANVAS -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+        <div class="offcanvas-header container-fluid">
+            <section class="row d-flex">
+                <div id="postGoesHere"></div>
+                <div id="comments">
+                </div>
+            </section>
+        </div>
+    </div>
 
 </body>
 

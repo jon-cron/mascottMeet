@@ -5,34 +5,38 @@
 @import "./loaders.scss";
 
 body {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  background-color: #5B5BD8
-
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #5B5BD8
 }
-.post-btn{
-  background-color: #5B5BD8
+
+.post-btn {
+    background-color: #5B5BD8
 }
 
 main {
-  flex-grow: 1;
-  ;
+    flex-grow: 1;
+    ;
 }
 
-.poster-img{
-  height: 6vh;
-  width: 6vh;
-  object-fit: cover;
-  border-radius: 45em;
+.poster-img {
+    height: 6vh;
+    width: 6vh;
+    object-fit: cover;
+    border-radius: 45em;
 }
-.navbar{
-  background-color: #F21E95 !important
-  
+
+.navbar {
+    background-color: #F21E95 !important
 }
-.off-form{
-  height: 38vh !important
+
+.off-form {
+    height: 38vh !important
 }
 
 
-
+.post-img {
+    width: 266.5px;
+    height: 245.67px;
+}
